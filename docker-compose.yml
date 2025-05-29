@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   kafka:
-    image: vectorized/redpanda:latest
+    image: redpandadata/redpanda:latest
     command: redpanda start --overprovisioned --smp 1 --reserve-memory 0M --node-id 0 --check=false
     ports:
       - "9092:9092"
