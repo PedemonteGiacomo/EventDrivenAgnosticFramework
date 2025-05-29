@@ -5,7 +5,11 @@
     "declaration": true,
     "outDir": "dist",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "skipLibCheck": true,          // ← ignora errori nei .d.ts di node_modules
+    "types": ["node"]              // usa le definizioni core di Node
   },
   "include": ["src"]
 }

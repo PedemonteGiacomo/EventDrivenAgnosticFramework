@@ -1,12 +1,13 @@
-import { html, css, customElement, state } from 'lit';
+import { html, css } from 'lit';
+import { customElement, state } from 'lit/decorators.js';
 import { EventedElement } from './evented-element';
 
 @customElement('order-form')
 export class OrderForm extends EventedElement {
-  static styles = css\`
+  static styles = css`
     :host { font-family: sans-serif; }
     form { display: flex; gap: 0.5rem; }
-  \`;
+  `;
 
   @state() qty = 1;
 
@@ -22,11 +23,17 @@ export class OrderForm extends EventedElement {
   }
 
   render() {
-    return html\`
-      <form @submit=\${this.submitHandler}>
-        <input type="number" .value=\${this.qty} @input=\${(e:any)=>this.qty=e.target.value} min="1" />
+    return html`
+      <form @submit=${this.submitHandler}>
+        <input
+          type="number"
+          .value=${this.qty}
+          @input=${(e: Event) =>
+            (this.qty = Number((e.target as HTMLInputElement).value))}
+          min="1"
+        />
         <button>Send Order</button>
       </form>
-    \`;
+    `;
   }
 }
