@@ -1,0 +1,11 @@
+{
+  "name": "edframework-demo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/services/*"
+  ],
+  "scripts": {
+    "build": "npm run build -ws"
+  }
+}
