@@ -26,3 +26,8 @@ export class EventBus {
     return this.adapter.subscribe(type, handler);
   }
 }
+
+// re-export degli adapter per i consumer esterni
+export { KafkaAdapter } from './kafkaAdapter';
+export { NatsAdapter }  from './natsAdapter';
+export { MockAdapter }  from './mockAdapter';
