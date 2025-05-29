@@ -11,5 +11,6 @@
     "skipLibCheck": true,          // ← ignora errori nei .d.ts di node_modules
     "types": ["node"]              // usa le definizioni core di Node
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/__tests__/**", "**/*.test.ts"]   // <— aggiungi questa riga
 }
