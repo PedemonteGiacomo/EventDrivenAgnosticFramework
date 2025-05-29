@@ -7,9 +7,12 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "kafkajs": "^2.2.4"
+    "kafkajs": "^2.2.4",
+    "@types/node": "^20.11.17",
+    "@types/express": "^4.17.21",
+    "@types/cors": "^2.8.18",
+    "typescript": "^5.4.0"
   },
   "devDependencies": {
-    "typescript": "^5.4.0"
   }
 }
