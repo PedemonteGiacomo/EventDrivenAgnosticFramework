@@ -1,10 +1,8 @@
-import { LitElement, html, css, customElement, state } from 'lit';
-import { EventBus, KafkaAdapter } from '@my-org/event-bus-sdk';
-
-const eventBus = new EventBus(new KafkaAdapter('/api'));
+import { html, css, customElement, state } from 'lit';
+import { EventedElement } from './evented-element';
 
 @customElement('order-form')
-export class OrderForm extends LitElement {
+export class OrderForm extends EventedElement {
   static styles = css\`
     :host { font-family: sans-serif; }
     form { display: flex; gap: 0.5rem; }
@@ -19,7 +17,7 @@ export class OrderForm extends LitElement {
       items: [{ sku: 'ABC', qty: this.qty }],
       ts: Date.now()
     };
-    eventBus.emit('OrderCreated', payload);
+    this.emit('OrderCreated', payload);
     this.qty = 1;
   }
 

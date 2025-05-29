@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>ED Framework Demo</title>
+    <script>
+      window.__EVENT_BUS__ = 'kafka'; // or 'nats' or 'mock'
+    </script>
     <script type="module" src="/src/order-form.ts"></script>
+    <script type="module" src="/src/order-counter.ts"></script>
   </head>
   <body>
     <h1>Order Demo</h1>
     <order-form></order-form>
+    <order-counter></order-counter>
   </body>
 </html>

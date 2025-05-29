@@ -6,6 +6,11 @@
     "packages/services/*"
   ],
   "scripts": {
-    "build": "npm run build -ws"
+    "build": "npm run build -ws",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "ts-jest": "^29.0.0",
+    "jest": "^29.0.0"
   }
 }
